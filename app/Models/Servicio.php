@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Servicio extends Model
 {
     use HasFactory;
+    public function soldados()
+    {
+        return $this->belongsToMany('App\Models\Soldado');
+    }
 }

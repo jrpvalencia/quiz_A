@@ -16,9 +16,16 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('apellido');
             $table->integer('grado');
-            $table->integer('cod_CE');
-            $table->integer('num_comp');
-            $table->integer('cod_cuartel');
+
+            $table->unsignedBigInteger('cod_CE');
+            $table->foreign('cod_CE')->references('id')->on('cuerpo_esps')->onDelete('cascade');
+
+            $table->unsignedBigInteger('num_comp');
+            $table->foreign('num_comp')->references('id')->on('compañias')->onDelete('cascade');
+
+            $table->unsignedBigInteger('cod_cuartel');
+            $table->foreign('cod_cuartel')->references('id')->on('cuartels')->onDelete('cascade');
+            
             
             $table->timestamps();
         });
