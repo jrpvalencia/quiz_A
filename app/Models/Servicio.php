@@ -13,4 +13,5 @@ class Servicio extends Model
     {
         return $this->belongsToMany('App\Models\Soldado');
     }
+    
 }

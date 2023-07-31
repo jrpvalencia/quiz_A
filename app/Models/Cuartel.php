@@ -16,4 +16,9 @@ class Cuartel extends Model
     public function compañias(){
         return $this->belongsToMany('App\Models\Compañia');
     }
+    //Relacion uno a uno polimorfica
+    public function image(){
+        return $this->morphOne('App\Models\Images','images');
+    }
+
 }
